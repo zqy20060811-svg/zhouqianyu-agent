@@ -8,7 +8,7 @@ from slowapi import Limiter
 from slowapi.errors import RateLimitExceeded
 from slowapi.util import get_remote_address
 
-from .config import chat_limit, chat_window_ms
+from .config import chat_daily_limit, chat_limit, chat_window_ms
 from .data_loader import data_loader
 from .policy import assert_publication_ready, sanitize_candidate, validate_chat_payload
 
@@ -43,7 +43,7 @@ def create_app() -> FastAPI:
         }
 
     @app.post("/api/chat")
-    @limiter.limit(f"{chat_limit()}/{chat_window_ms() // 1000}second")
+    @limiter.limit(f"{chat_limit()}/{chat_window_ms() // 1000}second;{chat_daily_limit()}/day")
     async def chat(request: Request) -> JSONResponse:
         try:
             payload = await request.json()

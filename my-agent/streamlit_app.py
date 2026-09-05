@@ -40,57 +40,55 @@ def render_citations(citation_ids: list[str], candidate: dict) -> None:
 
 
 def render_resume(candidate: dict) -> None:
-    """页面底部展示候选人简历基本信息（脱敏后无联系方式）。"""
+    """页面底部展示候选人简历基本信息（脱敏后无联系方式，默认折叠）。"""
     profile_data = candidate.get("profile", {})
 
-    st.divider()
-    st.header("个人简历")
+    with st.expander("📄 个人简历（点击展开查看）", expanded=False):
+        col1, col2, col3 = st.columns(3)
+        col1.metric("姓名", profile_data.get("display_name") or "-")
+        col2.metric("所在地", profile_data.get("location") or "-")
+        years = profile_data.get("years_experience")
+        col3.metric("工作年限", years if years else "在校")
+        if profile_data.get("headline"):
+            st.caption(profile_data["headline"])
 
-    col1, col2, col3 = st.columns(3)
-    col1.metric("姓名", profile_data.get("display_name") or "-")
-    col2.metric("所在地", profile_data.get("location") or "-")
-    years = profile_data.get("years_experience")
-    col3.metric("工作年限", years if years else "在校")
-    if profile_data.get("headline"):
-        st.caption(profile_data["headline"])
+        summary = candidate.get("summary")
+        if summary:
+            st.subheader("个人简介")
+            st.write(summary)
 
-    summary = candidate.get("summary")
-    if summary:
-        st.subheader("个人简介")
-        st.write(summary)
+        skills = candidate.get("skills", [])
+        if skills:
+            st.subheader("技能")
+            cols = st.columns(min(len(skills), 4))
+            for col, sk in zip(cols, skills):
+                col.write(f"- {sk.get('name', '')} · {sk.get('level', '')}")
 
-    skills = candidate.get("skills", [])
-    if skills:
-        st.subheader("技能")
-        cols = st.columns(min(len(skills), 4))
-        for col, sk in zip(cols, skills):
-            col.write(f"- {sk.get('name', '')} · {sk.get('level', '')}")
+        projects = candidate.get("projects", [])
+        if projects:
+            st.subheader("项目经历")
+            for p in projects:
+                title = f"{p.get('title', '')} · {p.get('role', '')}"
+                with st.expander(title, expanded=False):
+                    if p.get("context"):
+                        st.write(p["context"])
+                    if p.get("stack"):
+                        st.write("**技术栈：** " + " / ".join(p["stack"]))
+                    results = p.get("results", [])
+                    if results:
+                        st.write("**成果：**")
+                        for r in results:
+                            st.write(f"- {r}")
 
-    projects = candidate.get("projects", [])
-    if projects:
-        st.subheader("项目经历")
-        for p in projects:
-            title = f"{p.get('title', '')} · {p.get('role', '')}"
-            with st.expander(title, expanded=False):
-                if p.get("context"):
-                    st.write(p["context"])
-                if p.get("stack"):
-                    st.write("**技术栈：** " + " / ".join(p["stack"]))
-                results = p.get("results", [])
-                if results:
-                    st.write("**成果：**")
-                    for r in results:
-                        st.write(f"- {r}")
-
-    education = candidate.get("education", [])
-    if education:
-        st.subheader("教育背景")
-        for e in education:
-            period = f"{e.get('start', '')} - {e.get('end', '')}".strip(" -")
-            st.write(
-                f"- {e.get('school', '')} · {e.get('major', '')} · {e.get('degree', '')}"
-                + (f"  ({period})" if period else "")
-            )
+        education = candidate.get("education", [])
+        if education:
+            st.subheader("教育背景")
+            for e in education:
+                period = f"{e.get('start', '')} - {e.get('end', '')}".strip(" -")
+                st.write(
+                    f"- {e.get('school', '')} · {e.get('major', '')} · {e.get('degree', '')}"
+                    + (f"  ({period})" if period else "")
+                )
 
 
 def main() -> None:
@@ -130,6 +128,14 @@ def main() -> None:
                 st.markdown(msg["content"])
 
     pending = st.session_state.pop("pending_question", None)
+
+    MAX_TURNS = 15
+    user_turns = sum(1 for m in st.session_state["history"] if m["role"] == "user")
+    if user_turns >= MAX_TURNS:
+        st.info("本会话已达对话上限（15 轮），如需继续请刷新页面重开。")
+        render_resume(candidate)
+        return
+
     question = st.chat_input("向 AI 面试助理提问...") or pending
 
     if question:

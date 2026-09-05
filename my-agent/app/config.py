@@ -67,6 +67,13 @@ def chat_window_ms() -> int:
         return 600000
 
 
+def chat_daily_limit() -> int:
+    try:
+        return max(1, int(_env("CHAT_DAILY_LIMIT", "30")))
+    except ValueError:
+        return 30
+
+
 def fastapi_base_url() -> str:
     return _env("FASTAPI_BASE_URL", "http://127.0.0.1:8787").rstrip("/")
 
