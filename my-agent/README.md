@@ -40,9 +40,6 @@ my-agent/
     data_loader.py   # 加载 data/*.json + 配置 LangSmith
     main.py          # FastAPI 应用 (/api/health /api/profile /api/chat)
   streamlit_app.py   # Streamlit 前端
-  tests/
-    test_policy.py   # 边界策略测试
-    test_api.py      # API 测试
   data/              # 候选人数据 (不进 Git 的隐私字段除外)
   public/            # 静态资源
   requirements.txt
@@ -88,16 +85,7 @@ streamlit run streamlit_app.py
 
 ## 测试
 
-```bash
-pytest tests/ -v
-```
-
-`npm run check` 对应的检查命令(测试 + 依赖审计):
-
-```bash
-pytest tests/ -v
-pip audit -r requirements.txt
-```
+本项目不包含单元测试,改用 UI 手动测试:按上文「本地运行」启动前后端,在 `http://127.0.0.1:8501/` 界面提问,验证回答范围、证据引用展示与底部个人简历区块是否正常。
 
 ## Docker 部署
 
