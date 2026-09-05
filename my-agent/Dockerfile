@@ -1,17 +1,16 @@
-FROM node:22-alpine AS build
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-COPY . .
-RUN npm run build
+FROM python:3.12-slim
 
-FROM node:22-alpine
-ENV NODE_ENV=production
 WORKDIR /app
-COPY package*.json ./
-RUN npm ci --omit=dev && npm cache clean --force
-COPY --from=build /app/dist ./dist
-COPY server ./server
-COPY data ./data
-EXPOSE 8787
-CMD ["node", "server/index.mjs"]
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PIP_NO_CACHE_DIR=1
+
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+EXPOSE 8787 8501
+
+# 合并部署:FastAPI (8787) + Streamlit (8501) 同容器
+CMD ["sh", "-c", "uvicorn app.main:create_app --factory --host 0.0.0.0 --port 8787 & streamlit run streamlit_app.py --server.port 8501 --server.address 0.0.0.0 --server.headless true"]
