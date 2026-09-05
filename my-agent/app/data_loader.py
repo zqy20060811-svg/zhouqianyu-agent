@@ -4,7 +4,7 @@ from __future__ import annotations
 import json
 import os
 
-from .config import DATA_DIR, langsmith_enabled
+from .config import DATA_DIR, langsmith_enabled, load_env
 from .models import AgentStyle, Candidate, Presentation
 from .provider import create_model_answerer
 
@@ -35,6 +35,7 @@ class DataLoader:
     def load(self) -> tuple[Candidate, AgentStyle, Presentation, callable]:
         if self._loaded:
             return self.candidate, self.style, self.presentation, self.answer_question
+        load_env()
         _configure_langsmith()
         self.candidate = Candidate.model_validate(_read_json("candidate.json"))
         self.style = AgentStyle.model_validate(_read_json("agent-style.json"))
