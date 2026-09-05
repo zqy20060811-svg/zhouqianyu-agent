@@ -12,6 +12,12 @@ FASTAPI_BASE_URL = os.environ.get("FASTAPI_BASE_URL", "http://127.0.0.1:8787").r
 
 st.set_page_config(page_title="AI 面试助理", page_icon="💼", layout="centered")
 
+# 隐藏 Streamlit 自带的 Deploy 按钮(部署到 Streamlit Cloud,本地项目不需要)
+st.markdown(
+    "<style>[data-testid='stAppDeployButton']{display:none !important;}</style>",
+    unsafe_allow_html=True,
+)
+
 
 @st.cache_data(ttl=60)
 def fetch_profile() -> dict:
