@@ -1,0 +1,269 @@
+{
+  "schema_version": "1.0",
+  "profile": {
+    "display_name": "周黔豫",
+    "headline": "Java 后端开发实习生 · 软件工程本科在读",
+    "location": "天津",
+    "years_experience": null,
+    "avatar_url": null,
+    "contact": {
+      "phone": "13642180914",
+      "email": "zhouqianyu811@gmail.com"
+    }
+  },
+  "target_roles": [
+    "Java 后端开发实习生",
+    "后端开发实习生"
+  ],
+  "summary": "软件工程本科在读，主攻 Java 后端开发，熟悉 SpringBoot、MySQL、Redis、JWT、WebSocket 等技术栈。具备独立完成后端项目开发、接口设计、Redis 缓存设计与 Linux 基础部署能力，能够完成认证鉴权、实时通信、缓存优化等常见后端业务场景开发。",
+  "skills": [
+    {
+      "name": "Java",
+      "level": "熟悉",
+      "evidence_ids": [
+        "ev-project-zheming-forum",
+        "ev-project-collab-doc"
+      ]
+    },
+    {
+      "name": "SpringBoot",
+      "level": "熟悉",
+      "evidence_ids": [
+        "ev-project-zheming-forum",
+        "ev-project-collab-doc"
+      ]
+    },
+    {
+      "name": "MySQL",
+      "level": "熟悉",
+      "evidence_ids": [
+        "ev-project-zheming-forum"
+      ]
+    },
+    {
+      "name": "Redis",
+      "level": "熟悉",
+      "evidence_ids": [
+        "ev-project-zheming-forum",
+        "ev-project-collab-doc"
+      ]
+    },
+    {
+      "name": "JWT 认证",
+      "level": "了解",
+      "evidence_ids": [
+        "ev-project-zheming-forum"
+      ]
+    },
+    {
+      "name": "WebSocket 实时通信",
+      "level": "了解",
+      "evidence_ids": [
+        "ev-project-collab-doc"
+      ]
+    },
+    {
+      "name": "MyBatis",
+      "level": "熟悉",
+      "evidence_ids": [
+        "ev-project-zheming-forum"
+      ]
+    },
+    {
+      "name": "RESTful API 设计",
+      "level": "熟悉",
+      "evidence_ids": [
+        "ev-project-zheming-forum"
+      ]
+    },
+    {
+      "name": "Git 版本管理",
+      "level": "熟悉",
+      "evidence_ids": [
+        "ev-project-zheming-forum",
+        "ev-project-collab-doc"
+      ]
+    },
+    {
+      "name": "Linux 基础部署",
+      "level": "熟悉",
+      "evidence_ids": [
+        "ev-project-zheming-forum"
+      ]
+    },
+    {
+      "name": "DTO/VO 分层架构",
+      "level": "熟悉",
+      "evidence_ids": [
+        "ev-project-zheming-forum"
+      ]
+    },
+    {
+      "name": "Maven",
+      "level": "熟悉",
+      "evidence_ids": [
+        "ev-project-zheming-forum",
+        "ev-project-collab-doc"
+      ]
+    }
+  ],
+  "experiences": [],
+  "projects": [
+    {
+      "id": "project-zheming-forum",
+      "title": "哲明论坛项目",
+      "context": "基于 SpringBoot 的社区论坛项目，主要用于练习完整后端业务开发、权限认证与 Redis 缓存设计。",
+      "role": "独立开发",
+      "problem": "需要一个完整的后端项目来实践 JWT 认证、Redis 缓存优化和 RESTful 接口设计等核心后端技能。",
+      "actions": [
+        "基于 JWT + Redis 实现登录认证、Token 存储与登录状态管理",
+        "使用 Redis 缓存点赞/收藏状态，降低高频数据库访问压力",
+        "完成发帖、点赞、收藏、帖子详情等核心业务接口开发",
+        "使用 DTO/VO 分层优化接口结构与数据返回格式",
+        "基于 RESTful 风格设计后端接口，提高接口规范性",
+        "接入 AI 内容摘要功能，实现帖子自动总结",
+        "使用 Git 管理项目版本，并完成基础 Linux 环境部署",
+        "对部分业务逻辑进行模块拆分，提高后端代码可维护性"
+      ],
+      "results": [
+        "独立完成论坛核心业务接口开发，包括发帖、点赞、收藏、帖子详情等模块",
+        "通过 Redis 缓存有效降低高频数据库访问压力",
+        "成功接入 AI 内容摘要功能，实现帖子自动总结",
+        "完成 Linux 环境下 Redis 与项目基础部署"
+      ],
+      "stack": [
+        "Java",
+        "SpringBoot",
+        "MyBatis",
+        "MySQL",
+        "Redis",
+        "JWT",
+        "Maven",
+        "Git",
+        "Linux"
+      ],
+      "links": [],
+      "evidence_ids": [
+        "ev-project-zheming-forum"
+      ]
+    },
+    {
+      "id": "project-collab-doc",
+      "title": "中德协同文档项目",
+      "context": "一个偏实时协作场景的在线文档项目，重点实现多人在线同步编辑与实时通信功能。",
+      "role": "独立开发",
+      "problem": "需要实现多人在线实时协同编辑文档的功能，解决实时数据同步、在线状态管理和断线重连等实时通信场景问题。",
+      "actions": [
+        "基于 WebSocket 实现多人在线实时协同编辑功能",
+        "实现文档内容实时同步与在线状态推送",
+        "使用 Redis 管理在线用户状态与部分实时数据",
+        "针对断线场景实现基础重连与数据同步逻辑",
+        "完成协同编辑核心功能与后端架构设计",
+        "对 WebSocket 长连接通信流程进行基础封装",
+        "优化部分实时同步逻辑，减少重复数据推送"
+      ],
+      "results": [
+        "独立完成多人在线实时协同编辑核心功能",
+        "实现文档内容实时同步与在线状态推送",
+        "针对断线场景实现基础重连与数据同步逻辑",
+        "优化实时同步逻辑，减少重复数据推送"
+      ],
+      "stack": [
+        "Java",
+        "SpringBoot",
+        "WebSocket",
+        "Redis",
+        "Maven",
+        "Git"
+      ],
+      "links": [],
+      "evidence_ids": [
+        "ev-project-collab-doc"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": "education-tjdz",
+      "school": "天津中德应用技术大学",
+      "degree": "本科",
+      "major": "软件工程",
+      "start": "2024-09",
+      "end": "2028-07",
+      "evidence_ids": [
+        "ev-education-software-engineering"
+      ]
+    }
+  ],
+  "links": [],
+  "evidence_cards": [
+    {
+      "id": "ev-project-zheming-forum",
+      "category": "project",
+      "title": "哲明论坛项目证据",
+      "claim": "候选人独立开发了基于 SpringBoot + MySQL + Redis + JWT 的社区论坛项目，完成了 JWT 认证、Redis 缓存优化、RESTful 接口设计、AI 内容摘要接入及 Linux 部署。",
+      "source_ref": "project-zheming-forum",
+      "source_url": null
+    },
+    {
+      "id": "ev-project-collab-doc",
+      "category": "project",
+      "title": "中德协同文档项目证据",
+      "claim": "候选人独立开发了基于 SpringBoot + WebSocket + Redis 的实时协同文档项目，实现了多人在线同步编辑、实时状态推送、断线重连与数据同步逻辑。",
+      "source_ref": "project-collab-doc",
+      "source_url": null
+    },
+    {
+      "id": "ev-education-software-engineering",
+      "category": "education",
+      "title": "软件工程本科在读",
+      "claim": "候选人就读于天津中德应用技术大学软件工程专业（本科），学习时间为 2024 年 9 月至 2028 年 7 月。",
+      "source_ref": "education-tjdz",
+      "source_url": null
+    },
+    {
+      "id": "ev-skill-redis-cache",
+      "category": "statement",
+      "title": "Redis 缓存实践",
+      "claim": "候选人在两个项目中均使用了 Redis：在哲明论坛中用于缓存点赞/收藏状态以降低数据库访问压力，在协同文档中用于管理在线用户状态与实时数据。",
+      "source_ref": "project-zheming-forum",
+      "source_url": null
+    },
+    {
+      "id": "ev-skill-jwt-auth",
+      "category": "statement",
+      "title": "JWT 认证实践",
+      "claim": "候选人在哲明论坛项目中基于 JWT + Redis 实现了登录认证、Token 存储与登录状态管理。",
+      "source_ref": "project-zheming-forum",
+      "source_url": null
+    },
+    {
+      "id": "ev-skill-websocket",
+      "category": "statement",
+      "title": "WebSocket 实时通信实践",
+      "claim": "候选人在中德协同文档项目中基于 WebSocket 实现了多人在线实时协同编辑、文档内容实时同步、在线状态推送及断线重连逻辑。",
+      "source_ref": "project-collab-doc",
+      "source_url": null
+    },
+    {
+      "id": "ev-self-learning",
+      "category": "statement",
+      "title": "自主学习能力",
+      "claim": "候选人习惯通过项目实践学习新技术，能够主动查阅资料并解决开发问题，目前持续学习 Redis、WebSocket 与高并发相关技术。",
+      "source_ref": "self-evaluation",
+      "source_url": null
+    }
+  ],
+  "privacy": {
+    "publish_confirmed": false,
+    "confirmed_at": null,
+    "allowed_public_contact_fields": [],
+    "hidden_fields": [
+      "phone",
+      "email",
+      "wechat",
+      "exact_address",
+      "identity_number"
+    ]
+  }
+}

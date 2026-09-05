@@ -1,0 +1,29 @@
+{
+  "name": "xiazhuli-interview-agent-template",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n ui,api \"vite --host 0.0.0.0\" \"node --watch server/index.mjs\"",
+    "test": "node --test server/*.test.mjs",
+    "build": "vite build",
+    "audit": "npm audit --audit-level=high --registry=https://registry.npmjs.org",
+    "check": "npm run test && npm run build && npm run audit",
+    "start": "node server/index.mjs"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "dotenv-expand": "^1000.0.0",
+    "express": "latest",
+    "express-rate-limit": "latest",
+    "helmet": "latest",
+    "lucide-react": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "concurrently": "latest",
+    "vite": "^5.4.21"
+  }
+}
