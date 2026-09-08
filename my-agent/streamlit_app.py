@@ -118,10 +118,30 @@ def render_intro(candidate: dict) -> None:
             parts.append(f"📍 {location}")
         st.markdown(" · ".join(parts))
 
+        # 联系方式 + 到岗信息(仅展示脱敏后允许公开的字段)
+        contact = p.get("contact", {}) or {}
+        contact_parts = []
+        if contact.get("phone"):
+            contact_parts.append(f"📱 {contact['phone']}")
+        if contact.get("email"):
+            contact_parts.append(f"✉️ {contact['email']}")
+        if contact_parts:
+            st.markdown(" ｜ ".join(contact_parts))
+
         # 个人简介
         summary = candidate.get("summary")
         if summary:
             st.write(summary)
+
+        # 个人作品链接
+        links = candidate.get("links", []) or []
+        if links:
+            st.write("**个人作品**")
+            for lk in links:
+                label = lk.get("label", "链接")
+                url = lk.get("url", "")
+                if url:
+                    st.markdown(f"- [{label}]({url})")
 
         # 技能标签(一行展示,每个技能一个小标签)
         skills = candidate.get("skills", [])
@@ -142,6 +162,9 @@ def render_intro(candidate: dict) -> None:
                 line = f"- **{title}**"
                 if stack:
                     line += f" — {stack}"
+                for lk in proj.get("links", []) or []:
+                    if lk.get("url"):
+                        line += f" · [{lk.get('label', '链接')}]({lk['url']})"
                 st.write(line)
 
         # 教育:一行

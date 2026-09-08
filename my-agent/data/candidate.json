@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "profile": {
     "display_name": "周黔豫",
-    "headline": "Java 后端开发实习生 · 软件工程本科在读",
+    "headline": "AI 应用开发 / 大模型应用开发实习生 · 随时到岗",
     "location": "天津",
     "years_experience": null,
     "avatar_url": null,
@@ -12,174 +12,82 @@
     }
   },
   "target_roles": [
-    "Java 后端开发实习生",
-    "后端开发实习生"
+    "AI 应用开发实习生",
+    "大模型应用开发实习生"
   ],
-  "summary": "软件工程本科在读，主攻 Java 后端开发，熟悉 SpringBoot、MySQL、Redis、JWT、WebSocket 等技术栈。具备独立完成后端项目开发、接口设计、Redis 缓存设计与 Linux 基础部署能力，能够完成认证鉴权、实时通信、缓存优化等常见后端业务场景开发。",
+  "summary": "具备完整的 RAG + Agent + LLM 应用开发实践，能够独立完成从模型调用到后端服务的工程实现。熟悉 Hybrid Retrieval、Reranker、Query Rewrite、Function Calling、LangGraph Workflow 等大模型应用核心技术，以及 Python / FastAPI 后端开发、数据库设计、JWT 鉴权与 Docker 工程实践。注重 AI 应用的工程化与可维护性，不局限于调用 API，能够围绕实际业务设计完整的 AI Pipeline。",
   "skills": [
-    {
-      "name": "Java",
-      "level": "熟悉",
-      "evidence_ids": [
-        "ev-project-zheming-forum",
-        "ev-project-collab-doc"
-      ]
-    },
-    {
-      "name": "SpringBoot",
-      "level": "熟悉",
-      "evidence_ids": [
-        "ev-project-zheming-forum",
-        "ev-project-collab-doc"
-      ]
-    },
-    {
-      "name": "MySQL",
-      "level": "熟悉",
-      "evidence_ids": [
-        "ev-project-zheming-forum"
-      ]
-    },
-    {
-      "name": "Redis",
-      "level": "熟悉",
-      "evidence_ids": [
-        "ev-project-zheming-forum",
-        "ev-project-collab-doc"
-      ]
-    },
-    {
-      "name": "JWT 认证",
-      "level": "了解",
-      "evidence_ids": [
-        "ev-project-zheming-forum"
-      ]
-    },
-    {
-      "name": "WebSocket 实时通信",
-      "level": "了解",
-      "evidence_ids": [
-        "ev-project-collab-doc"
-      ]
-    },
-    {
-      "name": "MyBatis",
-      "level": "熟悉",
-      "evidence_ids": [
-        "ev-project-zheming-forum"
-      ]
-    },
-    {
-      "name": "RESTful API 设计",
-      "level": "熟悉",
-      "evidence_ids": [
-        "ev-project-zheming-forum"
-      ]
-    },
-    {
-      "name": "Git 版本管理",
-      "level": "熟悉",
-      "evidence_ids": [
-        "ev-project-zheming-forum",
-        "ev-project-collab-doc"
-      ]
-    },
-    {
-      "name": "Linux 基础部署",
-      "level": "熟悉",
-      "evidence_ids": [
-        "ev-project-zheming-forum"
-      ]
-    },
-    {
-      "name": "DTO/VO 分层架构",
-      "level": "熟悉",
-      "evidence_ids": [
-        "ev-project-zheming-forum"
-      ]
-    },
-    {
-      "name": "Maven",
-      "level": "熟悉",
-      "evidence_ids": [
-        "ev-project-zheming-forum",
-        "ev-project-collab-doc"
-      ]
-    }
+    { "name": "RAG 检索增强生成", "level": "熟悉", "evidence_ids": ["ev-project-rag"] },
+    { "name": "LangChain", "level": "熟悉", "evidence_ids": ["ev-project-rag", "ev-project-agentflow"] },
+    { "name": "LangGraph", "level": "熟悉", "evidence_ids": ["ev-project-agentflow"] },
+    { "name": "Function Calling / Tool Calling", "level": "熟悉", "evidence_ids": ["ev-project-agentflow"] },
+    { "name": "Prompt Engineering", "level": "熟悉", "evidence_ids": ["ev-project-rag", "ev-project-agentflow"] },
+    { "name": "Query Rewrite", "level": "熟悉", "evidence_ids": ["ev-project-rag"] },
+    { "name": "Hybrid Retrieval (Dense + BM25)", "level": "熟悉", "evidence_ids": ["ev-project-rag"] },
+    { "name": "BGE Reranker 重排序", "level": "熟悉", "evidence_ids": ["ev-project-rag"] },
+    { "name": "Embedding / 向量数据库 (Chroma / PGVector)", "level": "熟悉", "evidence_ids": ["ev-project-rag"] },
+    { "name": "Python", "level": "熟悉", "evidence_ids": ["ev-project-rag", "ev-project-agentflow"] },
+    { "name": "FastAPI", "level": "熟悉", "evidence_ids": ["ev-project-rag", "ev-project-agentflow"] },
+    { "name": "SQLAlchemy / Alembic", "level": "熟悉", "evidence_ids": ["ev-project-agentflow"] },
+    { "name": "PostgreSQL", "level": "熟悉", "evidence_ids": ["ev-project-agentflow"] },
+    { "name": "Redis", "level": "熟悉", "evidence_ids": ["ev-project-agentflow"] },
+    { "name": "JWT 认证", "level": "熟悉", "evidence_ids": ["ev-project-agentflow"] },
+    { "name": "RESTful API 设计", "level": "熟悉", "evidence_ids": ["ev-project-rag", "ev-project-agentflow"] },
+    { "name": "Docker", "level": "熟悉", "evidence_ids": ["ev-project-rag", "ev-project-agentflow"] },
+    { "name": "SaaS 订阅与额度体系", "level": "熟悉", "evidence_ids": ["ev-project-agentflow"] }
   ],
   "experiences": [],
   "projects": [
     {
-      "id": "project-zheming-forum",
-      "title": "哲明论坛项目",
-      "context": "基于 SpringBoot 的社区论坛项目，主要用于练习完整后端业务开发、权限认证与 Redis 缓存设计。",
+      "id": "project-rag-knowledgehub",
+      "title": "Enterprise RAG KnowledgeHub｜企业级智能知识库 RAG 平台",
+      "context": "面向企业内部知识管理与智能问答场景，构建从文档入库 → 内容处理 → 向量化 → 混合检索 → 重排序 → LLM 生成的完整 RAG Pipeline，支持多轮对话与企业知识库问答。",
       "role": "独立开发",
-      "problem": "需要一个完整的后端项目来实践 JWT 认证、Redis 缓存优化和 RESTful 接口设计等核心后端技能。",
+      "problem": "企业内部知识分散在大量文档中，简单的「Embedding + 向量数据库」方案在复杂问题、多轮对话场景下召回精度不足，需要一条完整的检索增强生成链路来保证回答的相关性与可信度。",
       "actions": [
-        "基于 JWT + Redis 实现登录认证、Token 存储与登录状态管理",
-        "使用 Redis 缓存点赞/收藏状态，降低高频数据库访问压力",
-        "完成发帖、点赞、收藏、帖子详情等核心业务接口开发",
-        "使用 DTO/VO 分层优化接口结构与数据返回格式",
-        "基于 RESTful 风格设计后端接口，提高接口规范性",
-        "接入 AI 内容摘要功能，实现帖子自动总结",
-        "使用 Git 管理项目版本，并完成基础 Linux 环境部署",
-        "对部分业务逻辑进行模块拆分，提高后端代码可维护性"
+        "负责文档处理链路，实现文档解析、内容清洗、Chunk 切分、MD5 内容去重及元数据管理，并在文档变更后同步更新检索索引",
+        "构建 Dense + BM25 混合检索机制：分别获取语义召回与关键词召回结果，通过去重及加权融合提升复杂问题下的召回覆盖能力",
+        "引入 BGE Cross-Encoder Reranker 对初步召回结果进行二阶段精排，进一步提升 Top-K 文档与用户问题的相关性",
+        "针对多轮对话场景设计 Query Rewrite，结合最近对话历史将上下文问题改写为独立检索 Query，降低指代、省略等问题对检索效果的影响",
+        "设计向量存储抽象层，兼容 Chroma / PGVector 等不同向量存储方案，降低底层组件替换成本",
+        "采用分层架构组织 API、RAG、Service、Model 等模块，使文档管理、检索、问答等功能具备较好的模块化与可维护性"
       ],
       "results": [
-        "独立完成论坛核心业务接口开发，包括发帖、点赞、收藏、帖子详情等模块",
-        "通过 Redis 缓存有效降低高频数据库访问压力",
-        "成功接入 AI 内容摘要功能，实现帖子自动总结",
-        "完成 Linux 环境下 Redis 与项目基础部署"
+        "完整实现 Hybrid Retrieval + Reranker + Query Rewrite + 文档治理的企业级 RAG 检索链路",
+        "混合检索与二阶段精排显著提升复杂问题下的召回覆盖与 Top-K 相关性",
+        "多轮对话场景下通过 Query Rewrite 有效缓解指代与省略导致的检索失效",
+        "向量存储抽象层支持 Chroma / PGVector 平滑切换，模块化分层架构便于功能扩展"
       ],
-      "stack": [
-        "Java",
-        "SpringBoot",
-        "MyBatis",
-        "MySQL",
-        "Redis",
-        "JWT",
-        "Maven",
-        "Git",
-        "Linux"
-      ],
+      "stack": ["Python", "FastAPI", "LangChain", "Chroma", "PGVector", "BM25", "BGE Reranker", "Docker"],
       "links": [],
-      "evidence_ids": [
-        "ev-project-zheming-forum"
-      ]
+      "evidence_ids": ["ev-project-rag"]
     },
     {
-      "id": "project-collab-doc",
-      "title": "中德协同文档项目",
-      "context": "一个偏实时协作场景的在线文档项目，重点实现多人在线同步编辑与实时通信功能。",
+      "id": "project-agentflow-saas",
+      "title": "AgentFlow SaaS｜多 Agent 智能各平台文案生产 SaaS 平台",
+      "context": "面向内容生产场景构建多 Agent SaaS 平台，实现从热点信息检索 → 多平台内容生成 → AI 合规审核 → 自动重写的闭环工作流，并结合用户认证、套餐订阅与生成额度构建完整 SaaS 后端。",
       "role": "独立开发",
-      "problem": "需要实现多人在线实时协同编辑文档的功能，解决实时数据同步、在线状态管理和断线重连等实时通信场景问题。",
+      "problem": "单次 LLM 调用无法完成「检索素材 → 生成文案 → 合规审核 → 按反馈重写」这类多环节内容生产任务，需要将 LLM 调用升级为具备自主工具调用、状态流转、条件路由与反馈重写能力的多 Agent 工作流，并产品化为可订阅、可计费的 SaaS 服务。",
       "actions": [
-        "基于 WebSocket 实现多人在线实时协同编辑功能",
-        "实现文档内容实时同步与在线状态推送",
-        "使用 Redis 管理在线用户状态与部分实时数据",
-        "针对断线场景实现基础重连与数据同步逻辑",
-        "完成协同编辑核心功能与后端架构设计",
-        "对 WebSocket 长连接通信流程进行基础封装",
-        "优化部分实时同步逻辑，减少重复数据推送"
+        "基于 LangGraph StateGraph 设计 A → B → C 多 Agent 工作流：Agent A 自主调用热点搜索工具获取素材，Agent B 按平台特征生成文案并支持按审核反馈二次改写，Agent C 进行 AI 合规审核并输出结构化审核结果与修改建议",
+        "使用 Function Calling / Tool Calling 实现 Agent 自主调用搜索工具，并设置最大 Tool Calling 轮次，避免 Agent 无限循环",
+        "设计 Conditional Edge 工作流：审核通过结束流程，不通过则自动回到内容生成节点按审核意见重新生成，形成「生成 → 审核 → 重写」闭环",
+        "对 LLM 输出进行结构化处理，实现 JSON 解析、异常兜底及失败重试，提高 Agent 工作流的稳定性",
+        "基于 FastAPI + SQLAlchemy + PostgreSQL 实现用户注册、登录、JWT 鉴权、用户信息及订阅套餐等后端能力",
+        "设计 Free / Pro / Ultra 多级套餐及生成额度体系，实现订阅状态、额度消耗与套餐切换等 SaaS 基础能力",
+        "通过模块化 API、Agent、Model、Schema、Core 等目录组织后端代码，具备较完整的 AI 应用工程结构"
       ],
       "results": [
-        "独立完成多人在线实时协同编辑核心功能",
-        "实现文档内容实时同步与在线状态推送",
-        "针对断线场景实现基础重连与数据同步逻辑",
-        "优化实时同步逻辑，减少重复数据推送"
+        "将单一 LLM 调用升级为具备自主工具调用、状态流转、条件路由、审核反馈和自动重写能力的多 Agent 工作流",
+        "结合用户订阅与额度体系，完成从 AI 功能到 SaaS 产品的工程化落地",
+        "结构化输出与异常兜底保障 Agent 工作流长期稳定运行",
+        "平台已部署上线，可通过在线环境直接体验"
       ],
-      "stack": [
-        "Java",
-        "SpringBoot",
-        "WebSocket",
-        "Redis",
-        "Maven",
-        "Git"
+      "stack": ["Python", "FastAPI", "LangGraph", "LangChain", "PostgreSQL", "SQLAlchemy", "Redis", "Docker", "Function Calling"],
+      "links": [
+        { "label": "在线体验", "url": "http://101.132.179.107:8505" }
       ],
-      "links": [],
-      "evidence_ids": [
-        "ev-project-collab-doc"
-      ]
+      "evidence_ids": ["ev-project-agentflow"]
     }
   ],
   "education": [
@@ -190,28 +98,29 @@
       "major": "软件工程",
       "start": "2024-09",
       "end": "2028-07",
-      "evidence_ids": [
-        "ev-education-software-engineering"
-      ]
+      "evidence_ids": ["ev-education-software-engineering"]
     }
   ],
-  "links": [],
+  "links": [
+    { "label": "个人 Agent 项目助手（本站）", "url": "http://101.132.179.107:8501" },
+    { "label": "AgentFlow SaaS 文案生产平台", "url": "http://101.132.179.107:8505" }
+  ],
   "evidence_cards": [
     {
-      "id": "ev-project-zheming-forum",
+      "id": "ev-project-rag",
       "category": "project",
-      "title": "哲明论坛项目证据",
-      "claim": "候选人独立开发了基于 SpringBoot + MySQL + Redis + JWT 的社区论坛项目，完成了 JWT 认证、Redis 缓存优化、RESTful 接口设计、AI 内容摘要接入及 Linux 部署。",
-      "source_ref": "project-zheming-forum",
+      "title": "企业级 RAG 知识库平台证据",
+      "claim": "候选人独立开发了企业级 RAG 知识库平台，完整实现文档治理（解析/清洗/Chunk 切分/MD5 去重/索引同步）、Dense + BM25 混合检索、BGE Cross-Encoder 二阶段精排、面向多轮对话的 Query Rewrite，以及兼容 Chroma / PGVector 的向量存储抽象层。",
+      "source_ref": "project-rag-knowledgehub",
       "source_url": null
     },
     {
-      "id": "ev-project-collab-doc",
+      "id": "ev-project-agentflow",
       "category": "project",
-      "title": "中德协同文档项目证据",
-      "claim": "候选人独立开发了基于 SpringBoot + WebSocket + Redis 的实时协同文档项目，实现了多人在线同步编辑、实时状态推送、断线重连与数据同步逻辑。",
-      "source_ref": "project-collab-doc",
-      "source_url": null
+      "title": "AgentFlow 多 Agent SaaS 平台证据",
+      "claim": "候选人独立开发了基于 LangGraph 的多 Agent 文案生产 SaaS 平台：StateGraph 编排 A（热点搜索）→ B（文案生成/改写）→ C（合规审核）工作流，使用 Function Calling 实现工具自主调用并限制最大轮次，通过 Conditional Edge 实现「生成 → 审核 → 重写」闭环，并基于 FastAPI + PostgreSQL + JWT 实现 Free/Pro/Ultra 套餐与生成额度的 SaaS 体系。",
+      "source_ref": "project-agentflow-saas",
+      "source_url": "http://101.132.179.107:8505"
     },
     {
       "id": "ev-education-software-engineering",
@@ -222,48 +131,34 @@
       "source_url": null
     },
     {
-      "id": "ev-skill-redis-cache",
+      "id": "ev-skill-hybrid-rag",
       "category": "statement",
-      "title": "Redis 缓存实践",
-      "claim": "候选人在两个项目中均使用了 Redis：在哲明论坛中用于缓存点赞/收藏状态以降低数据库访问压力，在协同文档中用于管理在线用户状态与实时数据。",
-      "source_ref": "project-zheming-forum",
+      "title": "Hybrid Retrieval + Reranker + Query Rewrite 实践",
+      "claim": "候选人在企业级 RAG 项目中完整实现 Dense + BM25 混合检索、BGE Cross-Encoder 重排序与面向多轮对话的 Query Rewrite，不局限于「Embedding + 向量数据库」的简单方案。",
+      "source_ref": "project-rag-knowledgehub",
       "source_url": null
     },
     {
-      "id": "ev-skill-jwt-auth",
+      "id": "ev-skill-multi-agent",
       "category": "statement",
-      "title": "JWT 认证实践",
-      "claim": "候选人在哲明论坛项目中基于 JWT + Redis 实现了登录认证、Token 存储与登录状态管理。",
-      "source_ref": "project-zheming-forum",
+      "title": "LangGraph 多 Agent 工作流实践",
+      "claim": "候选人基于 LangGraph StateGraph 实现多 Agent 协作工作流，掌握 Function Calling / Tool Calling、Conditional Edge 条件路由、结构化输出与异常兜底等大模型应用核心技术。",
+      "source_ref": "project-agentflow-saas",
       "source_url": null
     },
     {
-      "id": "ev-skill-websocket",
+      "id": "ev-self-agent",
       "category": "statement",
-      "title": "WebSocket 实时通信实践",
-      "claim": "候选人在中德协同文档项目中基于 WebSocket 实现了多人在线实时协同编辑、文档内容实时同步、在线状态推送及断线重连逻辑。",
-      "source_ref": "project-collab-doc",
-      "source_url": null
-    },
-    {
-      "id": "ev-self-learning",
-      "category": "statement",
-      "title": "自主学习能力",
-      "claim": "候选人习惯通过项目实践学习新技术，能够主动查阅资料并解决开发问题，目前持续学习 Redis、WebSocket 与高并发相关技术。",
+      "title": "个人 Agent 项目助手",
+      "claim": "候选人已搭建个人 Agent 项目助手（即本站），支持面试官通过自然语言了解其项目经历、技术栈与实现细节，仅依据候选人确认过的资料作答并给出证据引用。",
       "source_ref": "self-evaluation",
-      "source_url": null
+      "source_url": "http://101.132.179.107:8501"
     }
   ],
   "privacy": {
-    "publish_confirmed": false,
-    "confirmed_at": null,
-    "allowed_public_contact_fields": [],
-    "hidden_fields": [
-      "phone",
-      "email",
-      "wechat",
-      "exact_address",
-      "identity_number"
-    ]
+    "publish_confirmed": true,
+    "confirmed_at": "2026-09-08",
+    "allowed_public_contact_fields": ["phone", "email"],
+    "hidden_fields": ["wechat", "exact_address", "identity_number"]
   }
 }

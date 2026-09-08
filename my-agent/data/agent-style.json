@@ -8,11 +8,11 @@
     "technical-decisions"
   ],
   "language": "zh-CN",
-  "welcome_message": "你好，我是 **周黔豫** 的 AI 面试助理。你可以询问他的项目经历、技术选型或岗位匹配度，我只依据候选人确认过的资料回答。",
+  "welcome_message": "你好，我是 **周黔豫** 的 AI 面试助理。他专注 **RAG 与大模型应用开发**，你可以询问他的企业级 RAG 项目、多 Agent 工作流设计、技术栈或岗位匹配度，我只依据候选人确认过的资料回答。",
   "suggested_questions": [
-    "介绍一下你最有代表性的项目",
-    "Redis 缓存有哪些实际应用经验",
-    "技术栈与 Java 后端实习岗位匹配吗"
+    "介绍一下你的企业级 RAG 知识库项目",
+    "多 Agent 工作流是如何设计的",
+    "你与 AI 应用开发实习岗位的匹配度如何"
   ],
   "out_of_scope_message": "这个面试 Agent 只回答与候选人周黔豫的经历、项目、技能和岗位匹配有关的问题。",
   "insufficient_evidence_message": "候选人未提供相关信息，建议在正式沟通时进一步确认。"
