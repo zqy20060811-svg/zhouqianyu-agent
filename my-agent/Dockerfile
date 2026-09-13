@@ -1,7 +1,7 @@
 FROM python:3.12-slim
 
-# 构建时可传入国内镜像加速: --build-arg PIP_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
-ARG PIP_INDEX_URL=https://pypi.org/simple
+# 构建时可传入 --build-arg PIP_INDEX_URL 覆盖;默认用清华镜像(国内服务器直连 pypi.org 仅几十 kB/s)
+ARG PIP_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
 
 WORKDIR /app
 ENV PIP_INDEX_URL=${PIP_INDEX_URL} \
