@@ -8,6 +8,9 @@ ENV PYTHONUNBUFFERED=1 \
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
+# 预下载 Chroma 默认 embedding 模型(~80MB)到镜像内,避免容器启动时联网下载失败
+RUN python -c "from chromadb.utils.embedding_functions import ONNXMiniLM_L6_V2; ONNXMiniLM_L6_V2()(['warmup'])"
+
 COPY . .
 
 EXPOSE 8787 8501
