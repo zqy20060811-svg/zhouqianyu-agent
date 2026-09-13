@@ -12,8 +12,11 @@ ENV PIP_INDEX_URL=${PIP_INDEX_URL} \
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-# 预下载 Chroma 默认 embedding 模型(~80MB)到镜像内,避免容器启动时联网下载失败
-RUN python -c "from chromadb.utils.embedding_functions import ONNXMiniLM_L6_V2; ONNXMiniLM_L6_V2()(['warmup'])"
+# 预置 Chroma embedding 模型包(约83MB,通过 scp 放到 .chroma-model/ 后构建),
+# 有此文件则纯本地解压不联网;缺失时回退为联网下载
+COPY .chroma-model/ /root/.cache/chroma/onnx_models/all-MiniLM-L6-v2/
+RUN python -c "from chromadb.utils.embedding_functions import ONNXMiniLM_L6_V2; ONNXMiniLM_L6_V2()(['warmup'])" \
+    || echo "WARN: embedding model predownload failed, runtime will retry"
 
 COPY . .
 
