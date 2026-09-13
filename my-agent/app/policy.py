@@ -137,7 +137,7 @@ def validate_chat_payload(payload: Any) -> tuple[str, list[dict]]:
     return message, sanitized
 
 
-def build_system_prompt(candidate: Any, style: Any) -> str:
+def build_system_prompt(candidate: Any, style: Any, retrieved_chunks: list[str] | None = None) -> str:
     public_candidate = sanitize_candidate(candidate)
     evidence_ids = [card.get("id") for card in public_candidate.get("evidence_cards", []) if card.get("id")]
     style_dict = _as_dict(style)
@@ -165,8 +165,8 @@ def build_system_prompt(candidate: Any, style: Any) -> str:
 
 允许引用的证据 ID：{json.dumps(evidence_ids, ensure_ascii=False)}
 
-候选人公开资料：
-{json.dumps(public_candidate, ensure_ascii=False)}"""
+检索到的候选人资料片段：
+{json.dumps(retrieved_chunks, ensure_ascii=False) if retrieved_chunks else json.dumps(public_candidate, ensure_ascii=False)}"""
 
 
 def _parse_json_object(raw: Any) -> dict:

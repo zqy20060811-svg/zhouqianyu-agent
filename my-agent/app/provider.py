@@ -58,8 +58,7 @@ def _build_messages(system_prompt: str, message: str, history: list[dict]) -> li
     return messages
 
 
-def create_model_answerer(candidate: Candidate, style: AgentStyle) -> callable:
-    system_prompt = build_system_prompt(candidate, style)
+def create_model_answerer(candidate: Candidate, style: AgentStyle, retriever=None) -> callable:
     config = _provider_config()
     llm = ChatOpenAI(
         model=config["model"],
@@ -76,6 +75,9 @@ def create_model_answerer(candidate: Candidate, style: AgentStyle) -> callable:
         if not _semaphore.acquire(blocking=False):
             raise RuntimeError("model concurrency limit reached")
         try:
+            system_prompt = build_system_prompt(
+                candidate, style, retriever.retrieve(message) if retriever else None
+            )
             messages = _build_messages(system_prompt, message, history)
             llm_output: LLMOutput = chain.invoke(messages)
             return normalize_model_answer(llm_output.model_dump_json(), candidate, style)

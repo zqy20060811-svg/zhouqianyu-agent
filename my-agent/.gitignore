@@ -15,3 +15,6 @@ venv/
 .ruff_cache/
 *.egg-info/
 
+# RAG 向量索引（启动时自动重建）
+data/chroma/
+

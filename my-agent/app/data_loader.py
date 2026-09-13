@@ -7,6 +7,7 @@ import os
 from .config import DATA_DIR, langsmith_enabled, load_env
 from .models import AgentStyle, Candidate, Presentation
 from .provider import create_model_answerer
+from .rag import ResumeRetriever
 
 
 def _read_json(name: str) -> dict:
@@ -40,7 +41,8 @@ class DataLoader:
         self.candidate = Candidate.model_validate(_read_json("candidate.json"))
         self.style = AgentStyle.model_validate(_read_json("agent-style.json"))
         self.presentation = Presentation.model_validate(_read_json("presentation.json"))
-        self.answer_question = create_model_answerer(self.candidate, self.style)
+        retriever = ResumeRetriever(self.candidate.model_dump())
+        self.answer_question = create_model_answerer(self.candidate, self.style, retriever)
         self._loaded = True
         return self.candidate, self.style, self.presentation, self.answer_question
 
